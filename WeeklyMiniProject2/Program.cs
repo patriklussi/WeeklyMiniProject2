@@ -6,6 +6,7 @@ Console.ForegroundColor = ConsoleColor.Magenta;
 Console.WriteLine("Welcome to your product list. Enter values below. When you are done enter q to quit");
 Console.ForegroundColor = ConsoleColor.White;
 
+Console.WriteLine("Hello from Visual studio");
 
 string data;
 string name = string.Empty;
