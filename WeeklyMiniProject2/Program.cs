@@ -8,10 +8,6 @@ Console.ForegroundColor = ConsoleColor.White;
 
 Console.WriteLine("Hello from Visual studio");
 
-string data;
-string name = string.Empty;
-string category = string.Empty;
-int price = 0;
 
 
 ProductList products = new ProductList();
@@ -42,11 +38,27 @@ Console.WriteLine("Exited");
 List<ProductList> productLists = new List<ProductList>();
 
 productLists.Add(products);
-
-foreach(var product in productLists)
+productLists.Sort();
+Console.ForegroundColor = ConsoleColor.Magenta;
+Console.WriteLine("---------------------------------");
+Console.ForegroundColor = ConsoleColor.White;
+foreach (var product in productLists)
 {
-    Console.WriteLine(product.Category);
+    Console.WriteLine("Category: ".PadRight(10) + product.Category);
+    Console.WriteLine("Name: ".PadRight(10) + product.Name);
+    Console.WriteLine("Price: ".PadRight(10)+ product.Price);
 }
 
 
-Console.ReadLine();
+string restart = Console.ReadLine();
+
+if(restart == "Add more")
+{
+    products.AddProducts();
+} else
+{
+    Console.WriteLine("Gay");
+}
+
+
+

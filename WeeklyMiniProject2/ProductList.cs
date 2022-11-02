@@ -36,9 +36,9 @@ namespace WeeklyMiniProject2
             Console.Write("Add a product price: ");
             this.Price = Convert.ToInt32(Console.ReadLine());
 
-     
-            
-
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Succsefully added product to list");
+            Console.ResetColor();
         }
     }
 }
