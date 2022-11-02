@@ -25,20 +25,6 @@ namespace WeeklyMiniProject2
         public int Price { get; set; }
         public bool Breaker = false;
 
-      public  void AddProducts()
-        {
-            Console.Write("Add product category: ");
-            this.Category = Console.ReadLine();
-
-            Console.Write("Add a product name: ");
-            this.Name = Console.ReadLine();
-
-            Console.Write("Add a product price: ");
-            this.Price = Convert.ToInt32(Console.ReadLine());
-
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Succsefully added product to list");
-            Console.ResetColor();
-        }
+     
     }
 }

@@ -9,36 +9,42 @@ Console.ForegroundColor = ConsoleColor.White;
 Console.WriteLine("Hello from Visual studio");
 
 
-
-ProductList products = new ProductList();
-
-
-products.AddProducts();
+string category;
+string name;
+int price;
 
 
-//while (true)
-//{
+void GetInfo()
+{
+    Console.Write("Add product category: ");
+    category = Console.ReadLine();
 
+    Console.Write("Add a product name: ");
+    name = Console.ReadLine();
 
-//    products.AddProducts();
-//    //Console.WriteLine(products.Breaker);
-//    if (products.Breaker)
-//   {
-//       break;
-//   }
+    Console.Write("Add a product price: ");
+    price = Convert.ToInt32(Console.ReadLine());
 
-   
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine("Succsefully added product to list");
+    Console.ResetColor();
 
-//    Console.WriteLine(products.Price);
-
-//}
-Console.WriteLine("Exited");
-
+}
 
 List<ProductList> productLists = new List<ProductList>();
 
-productLists.Add(products);
-productLists.Sort();
+while (true)
+{
+    GetInfo();
+    productLists.Add(new ProductList { Category = category,Name = name,Price = price, });
+    string data = Console.ReadLine();
+
+    if(data.Trim().ToLower() == "q"){
+        break;
+    }
+}
+  
+Console.WriteLine("Exited");
 Console.ForegroundColor = ConsoleColor.Magenta;
 Console.WriteLine("---------------------------------");
 Console.ForegroundColor = ConsoleColor.White;
@@ -50,15 +56,7 @@ foreach (var product in productLists)
 }
 
 
-string restart = Console.ReadLine();
-
-if(restart == "Add more")
-{
-    products.AddProducts();
-} else
-{
-    Console.WriteLine("Gay");
-}
 
 
+Console.ReadLine();
 
