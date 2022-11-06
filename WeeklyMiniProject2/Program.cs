@@ -8,7 +8,7 @@ Console.ForegroundColor = ConsoleColor.White;
 string category;
 string name;
 int price;
-bool breaker = false;
+
 List<ProductList> productLists = new List<ProductList>();
 
 void lineDivider()
@@ -24,7 +24,7 @@ void error(string errorMsg) //Error function to increase the understandability o
     Console.WriteLine(errorMsg);
     Console.ResetColor();
 }
-void GetInfo()
+void GetInfo() //Function to capture user input and information and then add it to the product list 
 {
     while (true)
     {
@@ -61,7 +61,6 @@ void GetInfo()
             break;
         } 
 
-
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Succsefully added product to list");
         Console.ResetColor();
@@ -83,16 +82,21 @@ void GetInfo()
 while (true) // This while loop ensures that you can add more products if you want
 {
     GetInfo();
+    lineDivider();
     DisplayList.PrintList(productLists);
+    lineDivider();
+    Console.WriteLine("Enter P if you wish to add additional products to the list");
     string restart = Console.ReadLine();
-    if(restart.Trim().ToLower() == "restart")
+    if(restart.Trim().ToUpper() == "P")
     {
         continue;
 
     } else
 
     {
+        Console.WriteLine("Thank you for using this product lister");
         break;
+       
     }
 }
 
@@ -105,7 +109,7 @@ class DisplayList
     public  static void PrintList(List<ProductList> productLists)
     {
         int sum = productLists.Sum(product => product.Price);
-        Console.WriteLine("Here is your list of products. Enter restart if you wish to enter additional products to the list");
+        Console.WriteLine("Here is your list of products");
         Console.WriteLine();
 
         List<ProductList> sortedList = productLists.OrderBy(item => item.Price).ToList();
