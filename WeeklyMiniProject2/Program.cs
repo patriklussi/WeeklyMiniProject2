@@ -1,4 +1,4 @@
-﻿using WeeklyMiniProject2;
+using WeeklyMiniProject2;
 
 Console.ForegroundColor = ConsoleColor.Magenta;
 Console.WriteLine("Welcome to your product list. Enter values below. When you are done enter q to quit");
@@ -8,6 +8,7 @@ string category;
 string name;
 int price;
 
+
 ProductList productList = new ProductList();
 
 void lineDivider() // Function to print decorational lines
@@ -16,6 +17,7 @@ void lineDivider() // Function to print decorational lines
     Console.WriteLine("-----------------------------------------------------------");
     Console.ForegroundColor = ConsoleColor.White;
 }
+
 
 void error(string errorMsg) //Error function to increase the understandability of the code
 {
